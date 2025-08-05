@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Details</title>
+</head>
+<body>
+    <h2>{{ form.instance.pk|yesno:"edit student,Add Student" }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+
+    </form>
+
+    <a href="{% url 'student_list' %}">Back to list</a>
+    
+</body>
+</html>
